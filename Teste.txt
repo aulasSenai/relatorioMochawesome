@@ -1,0 +1,17 @@
+assetsDir: 'mochawesome-report',    // diretório de ativos
+
+
+reporter: "cypress-mochawesome-reporter",    // Reporter utilizado para gerar o resultado dos testes
+  reporterOptions: {
+    charts: true,    // gráficos
+    reportPageTitle: 'SENAI - Testes',    // título da página/ABA do relatório
+    embeddedScreenshots: true,    // capturas de tela incorporadas
+    inlineAssets: true,    // Ativos em linha
+    reportDir: 'cypress/reports/mochawesome',    // Destino relatório Dir
+    reportFilename: `Relatorio-${gerarData(0, 'minutes', 'dd-MM-yyyy-HH-mm')}`,    // Nome do arquivo de relatório
+    reportTitle: 'Resultado execução de casos de testes - SENAI',    // título do relatório
+    reportJsonFile: 'mochawesome.json',    // relatar arquivo Json
+    overwrite: true,    // substituir relatório após nova execução
+    quiet: true,    // 
+    autoOpen: true    // abertura automática
+  },
