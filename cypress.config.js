@@ -14,7 +14,7 @@ module.exports = defineConfig({
     reportJsonFile: 'mochawesome.json',    // relatar arquivo Json
     overwrite: true,    // substituir relatório após nova execução
     quiet: true,    // 
-    autoOpen: true    // abertura automática
+    // autoOpen: true    // abertura automática
   },
 
   e2e: {
