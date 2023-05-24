@@ -43,6 +43,10 @@ jobs:
       # The test artifacts (video, screenshots, test output) will be uploaded to Cypress dashboard
       # To record on Cypress dashboard we need to set CYPRESS_RECORD_KEY environment variable
 
+      - task: SomeTask
+        displayName: 'Build'
+        failOnStderr: true
+        
       - script: 
         export TERM=xterm
         export -T=t
