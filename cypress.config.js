@@ -12,8 +12,8 @@ module.exports = defineConfig({
     reportFilename: `Relatorio-Teste-QAS-Hoje`,  // ${gerarData(0, 'minutes', 'dd-MM-yyyy-HH-mm')}`,    // Nome do arquivo de relatório
     reportTitle: 'Resultado execução de casos de testes - SENAI',    // título do relatório
     reportJsonFile: 'mochawesome.json',    // relatar arquivo Json
-    overwrite: true,    // substituir relatório após nova execução
-    quiet: true,    // 
+    // overwrite: true,    // substituir relatório após nova execução
+    quiet: true,    // Quieto
     // autoOpen: true    // abertura automática
   },
 
