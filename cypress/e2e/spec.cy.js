@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Suite de Testes', () => {
   it('Teste 1', () => {
     cy.visit('https://example.cypress.io')
   })
@@ -16,11 +16,10 @@ describe('template spec', () => {
   })
 
   it('Teste 5', () => {
-    cy.visit('https://example.cypress.io').url()
-    .then(stringUpperCase = ()  => console.log(stringUpperCase.toUpperCase))
+    cy.visit('https://example.cypress.io')
   })
 
-  it('Teste 7', () => {
+  it('Teste 6', () => {
     cy.visit('https://example.cypress.io')
   })
 })
