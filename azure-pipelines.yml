@@ -7,10 +7,10 @@ jobs:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-      # - task: NodeTool@1
-      #   inputs:
-      #     versionSpec: '18.x'
-      #     displayName: 'Install Node.js'
+      - task: NodeTool@1
+        inputs:
+          versionSpec: '18.x'
+          displayName: 'Install Node.js'
 
       # NPM modules and Cypress binary should be cached
       # otherwise the install will be too slow
@@ -46,7 +46,7 @@ jobs:
       - task: SomeTask
         displayName: 'Build'
         failOnStderr: true
-        
+
       - script: 
         export TERM=xterm
         export -T=t
