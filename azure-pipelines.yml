@@ -44,7 +44,14 @@ jobs:
       # The test artifacts (video, screenshots, test output) will be uploaded to Cypress dashboard
       # To record on Cypress dashboard we need to set CYPRESS_RECORD_KEY environment variable
 
-      - script: export TERM=xterm| npm run cy:run | echo "Cypress exit code:$?"
+      - script: |
+          export TERM=xterm
+          npm run cy:run
+          exitCode=$?
+          echo "Cypress exit code: $exitCode"
+          if [ $exitCode -ne 0 ]; then
+            exit $exitCode
+          fi
         failOnStderr: true
         displayName: 'Executa testes cypress'
 
