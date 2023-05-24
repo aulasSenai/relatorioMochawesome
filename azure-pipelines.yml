@@ -46,8 +46,8 @@ jobs:
 
       - script: |
           export TERM=xterm
-          npm run cy:run || true
-        # failOnStderr: true
+          npm run cy:run
+        failOnStderr: true
         displayName: 'Executa testes cypress'
 
       - task: PublishBuildArtifacts@1
