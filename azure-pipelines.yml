@@ -7,10 +7,10 @@ jobs:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-      - task: NodeTool@0
-        inputs:
-          versionSpec: '18.x'
-          displayName: 'Install Node.js'
+      # - task: NodeTool@1
+      #   inputs:
+      #     versionSpec: '18.x'
+      #     displayName: 'Install Node.js'
 
       # NPM modules and Cypress binary should be cached
       # otherwise the install will be too slow
@@ -43,7 +43,11 @@ jobs:
       # The test artifacts (video, screenshots, test output) will be uploaded to Cypress dashboard
       # To record on Cypress dashboard we need to set CYPRESS_RECORD_KEY environment variable
 
-      - script: export TERM=xterm | npm run cy:run | echo "Cypress exit code:$?"
+      - script: 
+        export TERM=xterm
+        export -T=t
+        npm run cy:run
+        echo "Cypress exit code:$?"
         displayName: 'Executa testes cypress'
 
       # - task: PublishBuildArtifacts@1
