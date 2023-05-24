@@ -44,8 +44,9 @@ jobs:
       # To record on Cypress dashboard we need to set CYPRESS_RECORD_KEY environment variable
 
       - task: SomeTask
+        inputs:
+          failOnStderr: true
         displayName: 'Build'
-        failOnStderr: true
 
       - script: export TERM=xterm | export -T=t | npm run cy:run | echo "Cypress exit code:$?"
         displayName: 'Executa testes cypress'
