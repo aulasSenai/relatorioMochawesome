@@ -19,7 +19,7 @@ describe('template spec', () => {
     cy.visit('https://example.cypress.io')
   })
 
-  it('Teste 6', () => {
+  it('Teste 7', () => {
     cy.visit('https://example.cypress.io')
   })
 })
