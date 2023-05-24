@@ -50,8 +50,8 @@ jobs:
         # failOnStderr: true
         displayName: 'Executa testes cypress'
 
-      # - task: PublishBuildArtifacts@1
-      #   inputs:
-      #     PathtoPublish: './cypress/reports/mochawesome/'
-      #     ArtifactName: 'Relatório de Testes Cypress'
-      #   displayName: 'Publica Relatório do Mochawesome'
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: './cypress/reports/mochawesome/'
+          ArtifactName: 'Relatório de Testes Cypress'
+        displayName: 'Publica Relatório do Mochawesome'
