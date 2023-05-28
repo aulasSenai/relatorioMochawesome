@@ -10,6 +10,7 @@ describe('Suite de Testes', () => {
   it('Teste 3', () => {
     cy.visit('https://example.cypress.io')
     cy.contains('h1', 'Seja bem vindoooo')
+    cy.log('testes')
   })
 
   it('Teste 4', () => {
