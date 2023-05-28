@@ -5,7 +5,8 @@ module.exports = defineConfig({
 
     reporterOptions: {
       mochaFile: 'cypress/reports/junit/test-results.xml',
-      toConsole: false,
+      toConsole: true,
+      includeLogs: true,
       attachments: true
     },
 
