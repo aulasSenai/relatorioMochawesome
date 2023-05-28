@@ -10,7 +10,7 @@ jobs:
       - task: NodeTool@0
         inputs:
           versionSpec: '18.x'  # Especifique a versão do Node.js desejada
-          checkLatest: true
+          checkLatest: true  # Verifique o mais recente
         displayName: Instalando versão Node.js
 
       # NPM modules and Cypress binary should be cached
@@ -51,8 +51,16 @@ jobs:
         continueOnError: true
         displayName: 'Executa testes cypress'
 
-      - task: PublishBuildArtifacts@1
-        inputs:
-          PathtoPublish: './cypress/reports/mochawesome/'
-          ArtifactName: 'Relatório de Testes Cypress'
-        displayName: 'Publica Relatório do Mochawesome'
+      - task: PublishTestResults@2 
+        inputs: 
+          testResultsFormat: 'JUnit' 
+          testResultsFiles: '**/test-results-*.xml' 
+          searchFolder: '$(System.DefaultWorkingDirectory)/cypress/reports/junit' 
+          mergeTestResults: true 
+          failTaskOnFailedTests: true
+
+      # - task: PublishBuildArtifacts@1
+      #   inputs:
+      #     PathtoPublish: './cypress/reports/mochawesome/'
+      #     ArtifactName: 'Relatório de Testes Cypress'
+      #   displayName: 'Publica Relatório do Mochawesome'
