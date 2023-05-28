@@ -54,10 +54,11 @@ jobs:
       - task: PublishTestResults@2 
         inputs: 
           testResultsFormat: 'JUnit' 
-          testResultsFiles: '**/test-results-*.xml' 
-          searchFolder: '$(System.DefaultWorkingDirectory)/cypress/reports/junit' 
-          mergeTestResults: true 
+          testResultsFiles: 'cypress/reports/junit/test-results.xml'
+          searchFolder: '$(System.DefaultWorkingDirectory)'
+          mergeTestResults: true
           failTaskOnFailedTests: true
+        displayName: 'Publica Relatório em xml'
 
       # - task: PublishBuildArtifacts@1
       #   inputs:

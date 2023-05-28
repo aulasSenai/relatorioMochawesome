@@ -14,7 +14,6 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import 'mocha-junit-reporter';
 import 'cypress-mochawesome-reporter/register';
 
 import './commands'

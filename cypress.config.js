@@ -4,8 +4,9 @@ module.exports = defineConfig({
     reporter: 'junit',
 
     reporterOptions: {
-      mochaFile: 'cypress/reports/junit/test-results-[hash].xml',
+      mochaFile: 'cypress/reports/junit/test-results.xml',
       toConsole: false,
+      attachments: true
     },
 
   // reporter: "cypress-mochawesome-reporter",
@@ -28,7 +29,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
          
-      require('mocha-junit-reporter')(on);
+      require('junit')(on);
       // require('cypress-mochawesome-reporter/plugin')(on);
     },
     video: false,
