@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="3.092" tests="6" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-05-30T19:13:36" tests="0" file="cypress\e2e\spec.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Suite de Testes" timestamp="2023-05-30T19:13:36" tests="6" time="3.078" failures="0">
+    <testcase name="Suite de Testes Teste 1" time="0.484" classname="Teste 1">
+    </testcase>
+    <testcase name="Suite de Testes Teste 2" time="0.200" classname="Teste 2">
+    </testcase>
+    <testcase name="Suite de Testes Teste 3" time="0.135" classname="Teste 3">
+    </testcase>
+    <testcase name="Suite de Testes Teste 4" time="0.116" classname="Teste 4">
+    </testcase>
+    <testcase name="Suite de Testes Teste 5" time="0.117" classname="Teste 5">
+    </testcase>
+    <testcase name="Suite de Testes Teste 6" time="0.127" classname="Teste 6">
+    </testcase>
+  </testsuite>
+</testsuites>
