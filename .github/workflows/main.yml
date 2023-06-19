@@ -41,7 +41,7 @@ jobs:
           export TERM=xterm
           npm run cy:run 2>&1 || true
 
-#     - name: Publish test results
- #      uses: junit-team/junit-report-action@v2
- #      with:
- #        report_paths: cypress/reports/junit/test-results.xml
+      - name: Publish test results
+        uses: junit-team/junit-report-action@v2
+        with:
+          report_paths: cypress/reports/junit/test-results.xml
