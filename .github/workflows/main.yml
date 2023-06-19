@@ -32,17 +32,17 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: relatorioMochawesomeOrJunitComCICD
+        working-directory: ./relatorioMochawesomeOrJunitComCICD
 
       - name: Cypress verify
         run: npm run cy:verify
-        working-directory: relatorioMochawesomeOrJunitComCICD
+        working-directory: ./relatorioMochawesomeOrJunitComCICD
 
       - name: Run Cypress tests
         run: |
           export TERM=xterm
           npm run cy:run 2>&1 || true
-        working-directory: relatorioMochawesomeOrJunitComCICD
+        working-directory: ./relatorioMochawesomeOrJunitComCICD
 
      #  - name: Publish test results
      #    uses: junit-team/junit-report-action@v2
