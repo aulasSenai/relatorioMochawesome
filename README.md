@@ -48,10 +48,6 @@ Para executar os testes:
 6. Os relatórios serão gerados na pasta `./mochawesome-report`.
 7. Para integração contínua, as configurações do GitHub Actions já estão definidas no arquivo `.github/workflows/ci-cd.yml`.
 
-## Exemplo de Relatório
-
-Um exemplo de relatório gerado pelo Mochawesome pode ser acessado [aqui](https://aulassenai.github.io/relatorioMochawesomeOrJunitComCICD/). O relatório inclui informações detalhadas sobre os testes executados, erros encontrados e estatísticas de cobertura.
-
 ## Contribuições
 
 Contribuições e sugestões são bem-vindas! Sinta-se à vontade para enviar pull requests para melhorar o projeto e fornecer feedbacks.
