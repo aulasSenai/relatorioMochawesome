@@ -16,16 +16,16 @@ jobs:
           node-version: '16' # Especifique a versão do Node.js desejada
 
       - name: Cache NPM packages
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: npm | ${{ runner.os }}-node-${{ matrix.node-version }}-npm-${{ hashFiles('**/package-lock.json') }}
+          key: npm | ${{ runner.os }} | package-lock.json
 
       - name: Cache Cypress binary
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2
         with:
           path: ~/.cache/Cypress
-          key: cypress | ${{ runner.os }}-node-${{ matrix.node-version }}-cypress-${{ hashFiles('**/package-lock.json') }}
+          key: cypress | ${{ runner.os }} | package-lock.json
 
       - name: Install dependencies
         run: npm install
@@ -38,7 +38,7 @@ jobs:
           export TERM=xterm
           npm run cy:run 2>&1 || true
 
-  #    - name: Publish test results
-   #     uses: junit-team/junit-report-action@v2
-    #    with:
-     #     report_paths: cypress/reports/junit/test-results.xml
+ #     - name: Publish test results
+  #      uses: junit-team/junit-report-action@v2
+   #     with:
+    #      report_paths: cypress/reports/junit/test-results.xml
