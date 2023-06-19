@@ -16,29 +16,35 @@ jobs:
           node-version: '16' # Especifique a versão do Node.js desejada
 
       - name: Cache NPM packages
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.6
         with:
           path: ~/.npm
-          key: npm | ${{ runner.os }} | package-lock.json
+          key: npm | ${{ runner.os }}-node-${{ matrix.node-version }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Cache Cypress binary
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.6
         with:
           path: ~/.cache/Cypress
-          key: cypress | ${{ runner.os }} | package-lock.json
+          key: cypress | ${{ runner.os }}-node-${{ matrix.node-version }}-cypress-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        working-directory: relatorioMochawesomeOrJunitComCICD
 
       - name: Cypress verify
         run: npm run cy:verify
+        working-directory: relatorioMochawesomeOrJunitComCICD
 
       - name: Run Cypress tests
         run: |
           export TERM=xterm
           npm run cy:run 2>&1 || true
+        working-directory: relatorioMochawesomeOrJunitComCICD
 
- #     - name: Publish test results
-  #      uses: junit-team/junit-report-action@v2
-   #     with:
-    #      report_paths: cypress/reports/junit/test-results.xml
+     #  - name: Publish test results
+     #    uses: junit-team/junit-report-action@v2
+     #   with:
+     #     report_paths: relatorioMochawesomeOrJunitComCICD/cypress/reports/junit/test-results.xml
