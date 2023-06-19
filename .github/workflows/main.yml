@@ -28,7 +28,7 @@ jobs:
           key: cypress | ${{ runner.os }} | package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Cypress verify
         run: npm run cy:verify
